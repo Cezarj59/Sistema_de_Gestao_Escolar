@@ -1,4 +1,4 @@
-# Sistema_de_Cadastro_Escolar
+# Sistema de Cadastro Escolar
 
 Projeto final do modúlo Java Script do curso de Desenvolvimento de Software ITStep.
 

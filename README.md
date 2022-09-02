@@ -1,9 +1,9 @@
-# Sistema de Cadastro Escolar
+# Sistema de Gestão Escolar
 
 Projeto final do modúlo Java Script do curso de Desenvolvimento de Software ITStep.
 
 <h3>Sobre</h3>
-<p>A aplicação consiste em um site escolar, com um sistema de cadastro e consulta de alunos, professores e cursos</p>
+<p>A aplicação consiste em um site escolar, com um sistema de gestão escolar com cadastro e consulta de alunos, professores e cursos</p>
 
 <h3>Objetivo do projeto</h3>
 

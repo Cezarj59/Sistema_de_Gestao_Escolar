@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand titulo" href="#">Escola de Atenas</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item">
+                            <a class="nav-link navStyle" aria-current="page" href="#"
+                                onclick="active(0), alternaMenuNavBar(1)">Home</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle navStyle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" onclick="active(1)">
+                                Cadastros
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item cadastros"
+                                        onclick="alternaMenuNavBar(2),alternaFormularios(1)" href="#">Alunos</a></li>
+                                <li><a class="dropdown-item cadastros"
+                                        onclick="alternaMenuNavBar(2),alternaFormularios(2)" href="#">Professores</a>
+                                </li>
+                                <li><a class="dropdown-item cadastros"
+                                        onclick="alternaMenuNavBar(2),alternaFormularios(3)" href="#">Cursos</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle navStyle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" onclick="active(2)">
+                                Consultas
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item"
+                                        onclick="mostrarCardConsulta(1),alternaMenuNavBar(3), alteraConsultas(1)"
+                                        href="#">Alunos</a></li>
+                                <li><a class="dropdown-item"
+                                        onclick="mostrarCardConsulta(4),alternaMenuNavBar(3), alteraConsultas(2)"
+                                        href="#">Professores</a></li>
+                                <li><a class="dropdown-item"
+                                        onclick="mostrarCardConsulta(5),alternaMenuNavBar(3), alteraConsultas(3)"
+                                        href="#">Cursos</a></li>
+                                <li><a class="dropdown-item"
+                                        onclick="mostrarCardConsulta(6),alternaMenuNavBar(3), alteraConsultas(5)"
+                                        href="#">Geral</a></li>
+                            </ul>
+                        </li>
+
+
+                        <!-- alunos -->
+                        <li class="nav-item alunos">
+                            <a class="nav-link options" onclick="mostrarCardConsulta(1)" href="#">Todos Alunos</a>
+                        </li>
+                        <li class="nav-item alunos">
+                            <a class="nav-link options" onclick="mostrarCardConsulta(2)" href="#">Maiores de Idade</a>
+                        </li>
+                        <li class="nav-item alunos">
+                            <a class="nav-link options" onclick="mostrarCardConsulta(3)" href="#">Menores de Idade</a>
+                        </li>
+
+                        <li class="nav-item professores">
+                            <a class="nav-link options" onclick="mostrarCardConsulta(4)" href="#">Professores</a>
+                        </li>
+
+                        <li class="nav-item cursos">
+                            <a class="nav-link options" onclick="mostrarCardConsulta(5)" href="#">Cursos</a>
+                        </li>
+                        <!-- todos -->
+                        <li class="nav-item todos options">
+                            <a class="nav-link" onclick="mostrarCardConsulta(6)" href="#">Todos os Professores</a>
+                        </li>
+                        <li class="nav-item todos options">
+                            <a class="nav-link" onclick="mostrarCardConsulta(7)" href="#">Todos os Alunos</a>
+                        </li>
+
+                        <!--não sei o motivo mas se retirar a linha abaixo buga os formularios-->
+                        <li>
+                            <a class="todos"></a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="home">
+    </div>
+    <div class="container-fluid">
+        <div id="formularios">
+            <div class="container">
+                <!--FORM Alunos ----------------------------------------------------->
+                <form id="form-alunos" class="form-horizontal forms">
+                    <fieldset>
+                        <!-- Form Name -->
+                        <legend>Alunos</legend>
+
+                        <!-- Text input-->
+                        <div class="row">
+                            <label class="col-lg-4 control-label" for="inputName">Nome:</label>
+                            <div class=" col-lg-4">
+                                <input id="inputName" name="inputName" type="text" placeholder="Nome do Aluno..."
+                                    class="form-control input-md">
+
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="tinputAge">Idade:</label>
+                            <div class=" col-lg-1">
+                                <input id="tinputAge" name="tinputAge" type="text" pattern="\d{3}\"
+                                    title="Utilize apenas números." maxlength="2" placeholder="00"
+                                    class="form-control input-md">
+
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="inputEmail">E-mail:</label>
+                            <div class=" col-lg-4">
+                                <input id="inputEmail" name="inputEmail" type="email" placeholder="email@email.com"
+                                    class="form-control input-md">
+
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="tinputPhone">Telefone:</label>
+                            <div class=" col-lg-4">
+                                <input id="tinputPhone" name="tinputPhone" type="number" maxlength="11"
+                                    placeholder="0000000000000" class="form-control input-md">
+
+                            </div>
+                        </div>
+
+
+                        <!-- Select Basic -->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="inputMatricula">Curso:</label>
+                            <div class=" col-lg-4">
+                                <select id="inputMatricula" name="inputMatricula" class="form-control">
+                                    <option value="1">Arquitetura</option>
+                                    <option value="2">Artes</option>
+                                    <option value="3">Astronomia</option>
+                                    <option value="4">Filosofia</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <!-- Select Basic -->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="selectPeriodo">Periodo:</label>
+                            <div class=" col-lg-4">
+                                <select id="selectPeriodo" name="selectPeriodo" class="form-control">
+                                    <option value="m">Manhã</option>
+                                    <option value="t">Tarde</option>
+                                    <option value="n">Noite</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="buttonCadastrar"></label>
+                            <div class=" col-lg-4">
+                                <button id="buttonCadastrar" type="button" onclick="cadastrar(1)" name="buttonCadastrar"
+                                    class="btn btn-success">Cadastrar</button>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+
+                <!--FORM Professores ----------------------------------------------------->
+                <form id="form-professores" class="form-horizontal forms">
+                    <fieldset>
+
+                        <!-- Form Name -->
+                        <legend>Professores</legend>
+
+                        <!-- Text input-->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="inputNameProfessor">Nome:</label>
+                            <div class=" col-lg-4">
+                                <input id="inputNameProfessor" name="inputNameProfessor" type="text"
+                                    placeholder="Nome do Professor..." class="form-control input-md">
+
+                            </div>
+                        </div>
+
+
+                        <!-- Select Basic -->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="inputLeciona">Curso: </label>
+                            <div class=" col-lg-4">
+                                <select id="inputLeciona" name="inputLeciona" class="form-control">
+                                    <option value="1">Arquitetura</option>
+                                    <option value="2">Artes</option>
+                                    <option value="3">Astronomia</option>
+                                    <option value="4">Filosofia</option>
+                                    <option value="5">Física</option>
+                                    <option value="6">Geografia</option>
+                                    <option value="7">Matemática</option>
+                                    <option value="8">Música</option>
+                                    <option value="9">Teologia</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="inputEmailProfessor">E-mail:</label>
+                            <div class=" col-lg-4">
+                                <input id="inputEmailProfessor" name="inputEmailProfessor" type="email"
+                                    placeholder="email@email.com" class="form-control input-md">
+
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="inputPhoneProfessor">Telefone:</label>
+                            <div class=" col-lg-4">
+                                <input id="inputPhoneProfessor" name="inputPhoneProfessor" type="number"
+                                    placeholder="00000000000" class="form-control input-md">
+
+                            </div>
+                        </div>
+
+
+                        <!-- Button -->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="buttonCadastrar"></label>
+                            <div class=" col-lg-4">
+                                <button id="buttonCadastrar" type="button" onclick="cadastrar(2)" name="buttonCadastrar"
+                                    class="btn btn-success">Cadastrar</button>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+
+                <!--FORM Cursos ----------------------------------------------------->
+                <form id="form-cursos" class="form-horizontal forms">
+                    <fieldset>
+
+                        <!-- Form Name -->
+                        <legend>Cursos</legend>
+
+                        <!-- Text input-->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="inputCurso">Curso:</label>
+                            <div class=" col-lg-4">
+                                <input id="inputCurso" name="inputCurso" type="text" placeholder="Nome do Curso..."
+                                    class="form-control input-md">
+
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="inputEmailCurso">E-mail coordenador:</label>
+                            <div class=" col-lg-4">
+                                <input id="inputEmailCurso" name="inputEmailCurso" type="email"
+                                    placeholder="email@email.com" class="form-control input-md">
+
+                            </div>
+                        </div>
+
+                        <!-- Text input-->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="tinputPhoneCurso">Telefone coordenador:</label>
+                            <div class=" col-lg-4">
+                                <input id="tinputPhoneCurso" name="tinputPhoneCurso" type="number"
+                                    placeholder="00000000000" class="form-control input-md">
+
+                            </div>
+                        </div>
+
+                        <!-- Multiple Checkboxes (inline) -->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="periodoCurso">Periodo:</label>
+                            <div class=" col-lg-4">
+                                <label class="checkbox-inline" for="periodoCurso-0">
+                                    <input type="checkbox" name="periodoCurso" id="periodoCurso-0" value="m" checked>
+                                    Manhã
+                                </label>
+                                <label class="checkbox-inline" for="periodoCurso-1">
+                                    <input type="checkbox" name="periodoCurso" id="periodoCurso-1" value="t">
+                                    Tarde
+                                </label>
+                                <label class="checkbox-inline" for="periodoCurso-2">
+                                    <input type="checkbox" name="periodoCurso" id="periodoCurso-2" value="n">
+                                    Noite
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Textarea -->
+                        <div class="row">
+                            <label class="col-lg-4 control-label" for="textareaDescricao">Descrição:</label>
+                            <div class="col-lg-4">
+                                <textarea class="form-control" id="textareaDescricao"
+                                    name="textareaDescricao">Lorem ipsum</textarea>
+                            </div>
+                        </div>
+
+                        <!-- Button -->
+                        <div class="row">
+                            <label class=" col-lg-4 control-label" for="buttonCadastrar"></label>
+                            <div class=" col-lg-4">
+                                <button id="buttonCadastrar" type="button" onclick="cadastrar(3)" name="buttonCadastrar"
+                                    class="btn btn-success">Cadastrar</button>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+        <div id="mostraCards"></div>
+    </div>
+
+    <footer class="text-center text-lg-start fixed-bottom">
+        <!-- Copyright -->
+        <div class="text-center p-3 footer" style="color: #fff; background-color: #000;">
+            © 2022 Copyright:
+            <a class="text-ligth" href="https://pt.wikipedia.org/wiki/Escola_de_Atenas">Escola
+                de Atenas</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

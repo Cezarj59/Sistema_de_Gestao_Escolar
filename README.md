@@ -45,7 +45,7 @@ Projeto final do modúlo Java Script do curso de Desenvolvimento de Software ITS
 
 
 
-<h2>Demonstração completa.</h2> Link: https://cezarj59.github.io/Sistema_de_Cadastro_Escolar/
+<h2>Demonstração completa.</h2> Link: https://cezarj59.github.io/Sistema_de_Gestao_Escolar/
 
 <h3>Técnologias e recursos utilizados.</h3>
 <ul>
